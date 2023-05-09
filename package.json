@@ -11,12 +11,13 @@
     "deploy": "next build && next export && arkb deploy out --wallet wallet.json"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.298",
     "ethers": "^5.7.2",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.298"
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

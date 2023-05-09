@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Spline from '@splinetool/react-spline';
-
+import { useState } from "react";
+import Modal from "react-modal";
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div>
       <Head>
@@ -14,9 +17,17 @@ export default function Home() {
           <Spline className="animation" scene="https://prod.spline.design/XLnDWYFfWJOD4Qlq/scene.splinecode" />
           <div className="overlay">
             <img src="./subtext.svg" alt="Logo" />
-            <p><a href="#" target="_blank">Get Started</a></p>
-            <a href="https://cookbook.arweave.dev" target="_blank">Explore the Arweave Cookbook</a>
+            <button onClick={() => setIsModalOpen(true)}>Docs</button>
           </div>
+          <Modal isOpen={isModalOpen} className="modal">
+            <div className="flex justify-between">
+              <h2 className="text-xl text-white">create-permaweb-app</h2>
+              <svg onClick={() => setIsModalOpen(false)} xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x cursor-pointer" width="32" height="32" viewBox="0 0 24 24" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </div>
+            <div className="w-50 border border-white rounded-sm">
+              <p className="text-lg text-white text-center">Docs Go Here</p>
+            </div>
+          </Modal>
         </div>
       </div>
     </div>
